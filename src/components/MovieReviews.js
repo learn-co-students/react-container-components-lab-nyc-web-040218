@@ -5,7 +5,7 @@ class MovieReviews extends React.Component {
         return (
             <div className="review-list">
                 <div className="review">
-                    <h1>{this.props.movie.title}</h1>
+                    <h4>{this.props.movie.title}</h4>
                 </div>
             </div>
         )
