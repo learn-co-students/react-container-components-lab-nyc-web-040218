@@ -43,7 +43,7 @@ class LatestMovieReviewsContainer extends React.Component {
             });
 
         return (
-            <div>
+            <div className="review-list">
                 <h1 onClick={this.fetchData} >Movies</h1>
                 { moviesStructure }
             </div>
