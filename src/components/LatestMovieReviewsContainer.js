@@ -44,7 +44,7 @@ class LatestMovieReviewsContainer extends React.Component {
 
         return (
             <div className="review-list latest-movie-reviews">
-                <h1 onClick={this.fetchData} >Movies</h1>
+                <h1 onClick={this.fetchData} >Latest Movie Reviews:</h1>
                 { moviesStructure }
             </div>
         )
