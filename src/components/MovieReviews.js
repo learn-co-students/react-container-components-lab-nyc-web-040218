@@ -1,7 +1,10 @@
 import React from "react";
 
 const MovieReviews = ({review}) =>
-    <div className="review">
+    <div className="review" key={review.headline}>
+        <header>
+          {review.headline}
+        </header>
         <h4>{review.headline}</h4>
         <h5>By: {review.byline}</h5>
         <p>
@@ -10,4 +13,4 @@ const MovieReviews = ({review}) =>
         <p>{review.summary}</p>
     </div>;
 
-export default MovieReviews
+export default MovieReviews;
