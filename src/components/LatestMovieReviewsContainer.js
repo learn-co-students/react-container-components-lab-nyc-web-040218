@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import 'isomorphic-fetch';
 import MovieReviews from "./MovieReviews"
 require('es6-promise').polyfill();
@@ -12,7 +12,7 @@ const URL = 'https://api.nytimes.com/svc/movies/v2/reviews/all.json?'
 
 class LatestMovieReviewsContainer extends React.Component {
     state = {
-        movies: []
+        reviews: []
     }
 
 
@@ -22,7 +22,7 @@ class LatestMovieReviewsContainer extends React.Component {
             .then(res => {
                 for (const item in res.results) {
                     this.setState(prevState => ({
-                        movies: [...prevState.movies, {
+                        reviews: [...prevState.reviews, {
                             title: res.results[item].display_title,
                             opening_date: res.results[item].opening_date,
                             byline: res.results[item].byline,
@@ -31,19 +31,19 @@ class LatestMovieReviewsContainer extends React.Component {
                             mmUrl: res.results[item].multimedia["src"],
                             mpaa_rating: res.results[item].mpaa_rating
                         }]
-                      }))
-                    }
+                    }))
+                }
             })
     }
 
     render() {
         
-        let moviesStructure = this.state.movies.map((movie, index) => {
-                return <MovieReviews key={index} movie={movie} />
+        let moviesStructure = this.state.reviews.map((review, index) => {
+                return <MovieReviews key={index} review={review} />
             });
 
         return (
-            <div className="review-list">
+            <div className="review-list latest-movie-reviews">
                 <h1 onClick={this.fetchData} >Movies</h1>
                 { moviesStructure }
             </div>
