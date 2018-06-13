@@ -36,7 +36,7 @@ describe('<MovieReviews />', () => {
     expect(wrapper.hasClass('review-list')).to.be.true;
   });
 
-  xit('should render all the reviews', () => {
-    expect(wrapper.find('.review').length).to.equal(testReviews.length);
-  });
+  // xit('should render all the reviews', () => {
+  //   expect(wrapper.find('.review').length).to.equal(testReviews.length);
+  // });
 });

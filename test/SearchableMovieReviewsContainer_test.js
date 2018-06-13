@@ -32,11 +32,11 @@ describe('<SearchableMovieReviewsContainer />', () => {
     expect(wrapper.hasClass('searchable-movie-reviews'), 'Missing top-level element with class "searchable-movie-reviews"').to.be.true;
   });
 
-  xit('should render reviews after reviews state updated', () => {
-    wrapper = !SearchableMovieReviewsContainer.prototype ?
-      mount(<Noop />) : mount(<SearchableMovieReviewsContainer />);
-    wrapper.setState({ reviews: testReviews });
-    wrapper.update();
-    expect(wrapper.find('.review').length).to.equal(testReviews.length);
-  });
+  // xit('should render reviews after reviews state updated', () => {
+  //   wrapper = !SearchableMovieReviewsContainer.prototype ?
+  //     mount(<Noop />) : mount(<SearchableMovieReviewsContainer />);
+  //   wrapper.setState({ reviews: testReviews });
+  //   wrapper.update();
+  //   expect(wrapper.find('.review').length).to.equal(testReviews.length);
+  // });
 });
